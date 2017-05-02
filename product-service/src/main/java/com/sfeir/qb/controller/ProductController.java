@@ -3,6 +3,8 @@ package com.sfeir.qb.controller;
 import com.sfeir.qb.domain.Product;
 import com.sfeir.qb.domain.ProductRepository;
 import org.aspectj.weaver.ResolvedPointcutDefinition;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,11 +21,14 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductController {
 
+    private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+
     @Autowired
     ProductRepository productRepository ;
 
     @GetMapping
     ResponseEntity<List<Product>> getAll() {
+        logger.info("hello");
         return ResponseEntity.ok().body(productRepository.findAll());
     }
 
