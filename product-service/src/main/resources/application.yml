@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: product-service
+server:
+  port: 52001

@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost
+        fail-fast: false
