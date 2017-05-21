@@ -19,7 +19,7 @@ public class ProductController {
     private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
     @Autowired
-    ProductRepository productRepository ;
+    ProductRepository productRepository;
 
     @GetMapping
     ResponseEntity<List<Product>> getAll() {
@@ -43,6 +43,6 @@ public class ProductController {
         product.setTitle(title);
         product.setDescription(description);
         Product savedProduct = productRepository.save(product);
-        return ResponseEntity.created(new URI("/"+savedProduct.getId())).body(savedProduct);
+        return ResponseEntity.created(new URI("/" + savedProduct.getId())).body(savedProduct);
     }
 }

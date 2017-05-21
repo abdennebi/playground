@@ -19,7 +19,7 @@ public class StockController {
     @GetMapping("/{productRef}")
     ResponseEntity<Long> getProductRefStock(@PathVariable String productRef) {
         Stock stock = stockRepository.findByProductRef(productRef);
-        if (stock!=null) {
+        if (stock != null) {
             return ResponseEntity.ok().body(stock.getQuantity());
         }
         return ResponseEntity.ok().body(0L);

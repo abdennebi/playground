@@ -9,7 +9,7 @@ import javax.transaction.Transactional;
  * on 02/05/2017.
  */
 @Transactional
-public interface StockRepository extends JpaRepository<Stock,Long> {
+public interface StockRepository extends JpaRepository<Stock, Long> {
 
     Stock findByProductRef(String productRef);
 }

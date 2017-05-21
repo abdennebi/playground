@@ -16,13 +16,13 @@ public class ProductServiceApplication {
     @Autowired
     ProductRepository productRepository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProductServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ProductServiceApplication.class, args);
+    }
 
-	@Bean
+    @Bean
     CommandLineRunner dataInit() {
-	    return args -> {
+        return args -> {
             Product p = new Product();
             p.setRef("REF001");
             p.setTitle("Mac Book Pro 15");

@@ -1,9 +1,9 @@
 package com.github.abdennebi.service;
 
-import com.google.common.collect.Lists;
 import com.github.abdennebi.client.ProductClientApi;
 import com.github.abdennebi.client.StockClientApi;
 import com.github.abdennebi.domain.ProductWithStock;
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

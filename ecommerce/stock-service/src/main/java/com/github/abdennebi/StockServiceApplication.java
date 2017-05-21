@@ -16,13 +16,13 @@ public class StockServiceApplication {
     @Autowired
     StockRepository stockRepository;
 
-	public static void main(String[] args) {
-		SpringApplication.run(StockServiceApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(StockServiceApplication.class, args);
+    }
 
-	@Bean
+    @Bean
     CommandLineRunner initStockFixtures() {
-	    return args -> {
+        return args -> {
             Stock stock = new Stock();
             stock.setProductRef("REF001");
             stock.setQuantity(100L);
