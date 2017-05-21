@@ -9,11 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Created by Abderrazak BOUADMA
- * on 02/05/2017.
- */
-
 @Entity
 @Data
 @NoArgsConstructor

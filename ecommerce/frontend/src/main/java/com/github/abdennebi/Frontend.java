@@ -10,9 +10,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @SpringBootApplication
 @EnableSwagger2
 @EnableFeignClients(clients = {ProductClientApi.class, StockClientApi.class})
-public class AggregationServiceApplication {
+public class Frontend {
 
     public static void main(String[] args) {
-        SpringApplication.run(AggregationServiceApplication.class, args);
+        SpringApplication.run(Frontend.class, args);
     }
 }
