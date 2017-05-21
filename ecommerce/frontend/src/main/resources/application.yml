@@ -1,5 +1,5 @@
 spring:
   application:
-    name: aggregation-service
+    name: frontend
 server:
   port: 52000
