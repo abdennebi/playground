@@ -13,7 +13,7 @@ spec:
       containers:
       - name: frontend
         image: abdennebi/frontend:1.0.0-SNAPSHOT
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always #IfNotPresent
         ports:
         - containerPort: 80
         env:
@@ -23,3 +23,14 @@ spec:
           value: "http://stock-service"
         - name: PORT
           value: "80"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 60
+          periodSeconds: 10 # default is 10s
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 5
