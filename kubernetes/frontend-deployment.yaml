@@ -18,9 +18,9 @@ spec:
         - containerPort: 80
         env:
         - name: PRODUCT_URL
-          value: "http://product-service"
+          value: "http://product"
         - name: STOCK_URL
-          value: "http://stock-service"
+          value: "http://stock"
         - name: PORT
           value: "80"
         livenessProbe:
