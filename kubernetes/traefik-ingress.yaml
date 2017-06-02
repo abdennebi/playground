@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: onlinestore
+spec:
+  rules:
+  - host: frontend.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: frontend
+          servicePort: http
