@@ -13,7 +13,6 @@ data:
       target_groups:
       - targets:
         - 172.17.4.51:2379
-
     - job_name: 'kubernetes_components'
       kubernetes_sd_configs:
       - api_servers:
@@ -32,7 +31,7 @@ data:
       - source_labels: [__meta_kubernetes_role]
         action: keep
         regex: (?:apiserver|node)
-      # Redefine the Prometheus job based on the monitored Kubernetes component.
+      # Redefine the Prometheus job based on the monitored Kuberentes component.
       - source_labels: [__meta_kubernetes_role]
         target_label: job
         replacement: kubernetes_$1
@@ -40,3 +39,18 @@ data:
       # on that node.
       - action: labelmap
         regex: __meta_kubernetes_node_label_(.+)
+    - job_name: 'kubernetes_services'
+      kubernetes_sd_configs:
+      - api_servers:
+        - 'https://kubernetes'
+        in_cluster: true
+      relabel_configs:
+      - source_labels: [__meta_kubernetes_role, __meta_kubernetes_service_annotation_prometheus_io_scrape]
+        action: keep
+        regex: endpoint;true
+      - source_labels: [__meta_kubernetes_service_name]
+        target_label: job
+      - source_labels: [__meta_kubernetes_namespace]
+        target_label: namespace
+      - action: labelmap
+        regex: __meta_kubernetes_service_label_(.+)
