@@ -9,6 +9,7 @@ spec:
       labels:
         app: frontend
         version: v1
+        visualize: "true"
     spec:
       containers:
       - name: frontend

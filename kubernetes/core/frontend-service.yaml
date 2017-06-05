@@ -4,6 +4,7 @@ metadata:
   name: frontend
   labels:
     app: frontend
+    visualize: "true"
 spec:
   ports:
   - port: 80

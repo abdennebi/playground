@@ -4,6 +4,7 @@ metadata:
   name: product
   labels:
     app: product
+    visualize: "true"
 spec:
   ports:
   - port: 80
