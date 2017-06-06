@@ -1,26 +1,23 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: frontend
+  name: product
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: frontend
+        app: product
+        visualize: "true"
         version: v1
     spec:
       containers:
-      - name: frontend
-        image: abdennebi/frontend:1.0.0-SNAPSHOT
+      - name: product
+        image: abdennebi/product-service:1.0.0-SNAPSHOT
         imagePullPolicy: Always #IfNotPresent
         ports:
         - containerPort: 80
         env:
-        - name: PRODUCT_URL
-          value: "http://product"
-        - name: STOCK_URL
-          value: "http://stock"
         - name: PORT
           value: "80"
         livenessProbe:

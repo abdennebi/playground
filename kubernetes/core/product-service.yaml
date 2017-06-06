@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: product
   labels:
-    app: frontend
+    app: product
+    visualize: "true"
 spec:
   ports:
   - port: 80
     name: http
     targetPort: 80
   selector:
-    app: frontend
+    app: product
