@@ -18,9 +18,9 @@ ENTRYPOINT ["/usr/bin/mvn"]
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 # install maven dependency packages (keep in image)
-COPY pom.xml /usr/src/app
-COPY frontend /usr/src/app/frontend
-COPY product-service /usr/src/app/product-service
-COPY stock-service /usr/src/app/stock-service
+COPY online-store/pom.xml /usr/src/app
+COPY online-store/frontend /usr/src/app/frontend
+COPY online-store/product-service /usr/src/app/product-service
+COPY online-store/stock-service /usr/src/app/stock-service
 
 RUN mvn -T 1C install && rm -rf target
