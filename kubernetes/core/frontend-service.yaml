@@ -6,6 +6,7 @@ metadata:
     app: frontend
     visualize: "true"
 spec:
+  type: NodePort
   ports:
   - port: 80
     name: http
