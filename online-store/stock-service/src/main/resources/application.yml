@@ -2,4 +2,4 @@ spring:
   application:
     name: stock-service
 server:
-  port: 52002
+  port: 30082

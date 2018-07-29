@@ -2,4 +2,4 @@ spring:
   application:
     name: product-service
 server:
-  port: 52001
+  port: 30081
