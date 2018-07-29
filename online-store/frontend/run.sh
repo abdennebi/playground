@@ -2,7 +2,7 @@
 
 PRODUCT_URL=http://localhost:52001
 STOCK_URL=http://localhost:52002
-PORT=52000
+PORT=30080
 
 function run(){
 

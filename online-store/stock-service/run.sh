@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PORT=52002
+PORT=30082
 
 function run(){
 
