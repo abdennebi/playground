@@ -1,20 +1,21 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+        app: frontend
   template:
     metadata:
       labels:
         app: frontend
-        version: v1
-        visualize: "true"
     spec:
       containers:
       - name: frontend
         image: abdennebi/frontend:1.0.0-SNAPSHOT
-        imagePullPolicy: Always #IfNotPresent
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         env:

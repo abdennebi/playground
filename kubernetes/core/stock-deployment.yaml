@@ -1,20 +1,21 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: stock
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: stock
   template:
     metadata:
       labels:
         app: stock
-        visualize: "true"
-        version: v1
     spec:
       containers:
       - name: stock
         image: abdennebi/stock-service:1.0.0-SNAPSHOT
-        imagePullPolicy: Always #IfNotPresent
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         env:

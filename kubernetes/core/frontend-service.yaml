@@ -6,7 +6,7 @@ metadata:
     app: frontend
     visualize: "true"
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
   - port: 80
     name: http
