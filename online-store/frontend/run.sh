@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-PRODUCT_URL=http://localhost:52001
-STOCK_URL=http://localhost:52002
+PRODUCT_URL=http://localhost:30081
+STOCK_URL=http://localhost:30082
 PORT=30080
 
 function run(){
