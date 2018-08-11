@@ -21,7 +21,7 @@
         <java.version>1.8</java.version>
         <dependency.feign.version>9.7.0</dependency.feign.version>
         <dependency.springfox.version>2.9.2</dependency.springfox.version>
-
+        <plugin.jib.version>0.9.8</plugin.jib.version>
     </properties>
 
     <modules>
@@ -61,7 +61,7 @@
                 <plugin>
                     <groupId>com.google.cloud.tools</groupId>
                     <artifactId>jib-maven-plugin</artifactId>
-                    <version>0.9.8</version>
+                    <version>${plugin.jib.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
