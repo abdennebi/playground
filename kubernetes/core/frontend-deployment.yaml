@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 1
   selector:
     matchLabels:
-        app: frontend
+      app: frontend
+  replicas: 1
   template:
     metadata:
       labels:
-        app: frontend
+         app: frontend
     spec:
       containers:
       - name: frontend
-        image: abdennebi/frontend:1.0.0-SNAPSHOT
+        image: abdennebi/frontend
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
