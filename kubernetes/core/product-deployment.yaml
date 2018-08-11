@@ -15,7 +15,7 @@ spec:
       containers:
       - name: product
         image: abdennebi/product-service
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         env:
@@ -23,12 +23,12 @@ spec:
           value: "80"
         livenessProbe:
           httpGet:
-            path: /health
+            path: /actuator/health
             port: 80
           initialDelaySeconds: 60
           periodSeconds: 10 # default is 10s
         readinessProbe:
           httpGet:
-            path: /health
+            path: /actuator/health
             port: 80
-          initialDelaySeconds: 5
+          initialDelaySeconds: 20
