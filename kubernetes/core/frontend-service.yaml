@@ -4,7 +4,6 @@ metadata:
   name: frontend
   labels:
     app: frontend
-    visualize: "true"
 spec:
   type: LoadBalancer
   ports:
