@@ -65,6 +65,9 @@
                     <to>
                         <image>abdennebi/stock-service</image>
                     </to>
+                    <args>
+                        <arg>--server.port=${PORT}</arg>
+                    </args>
                 </configuration>
             </plugin>
         </plugins>

@@ -73,6 +73,11 @@
                     <container>
                         <useCurrentTimestamp>true</useCurrentTimestamp>
                     </container>
+                    <args>
+                        <arg>--frontend.product.url=${PRODUCT_URL}</arg>
+                        <arg>--frontend.stock.url=${STOCK_URL}</arg>
+                        <arg>--server.port=${PORT}</arg>
+                    </args>
                 </configuration>
             </plugin>
         </plugins>
