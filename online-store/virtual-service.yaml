@@ -1,0 +1,29 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  clusterName: ""
+  creationTimestamp: 2018-09-02T07:42:56Z
+  generation: 1
+  name: website-virtual-service
+  namespace: default
+  resourceVersion: "10375149"
+  selfLink: /apis/networking.istio.io/v1alpha3/namespaces/default/virtualservices/website-virtual-service
+  uid: cedd6295-ae83-11e8-8280-42010a8400dd
+spec:
+  gateways:
+  - website-gateway
+  hosts:
+  - '*'
+  http:
+   - match:
+     route:
+     - destination:
+        host: website
+        subset: version-2
+     - headers:
+       qa:
+         - exact: canary-test
+   - route:
+     - destination:
+        host: website
+        subset: version-1
