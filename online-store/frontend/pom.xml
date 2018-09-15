@@ -67,7 +67,7 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <configuration>
                     <to>
-                        <image>abdennebi/frontend</image>
+                        <image>cloudnativestack/frontend</image>
                     </to>
                     <container>
                         <useCurrentTimestamp>true</useCurrentTimestamp>

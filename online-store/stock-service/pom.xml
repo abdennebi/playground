@@ -63,7 +63,7 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <configuration>
                     <to>
-                        <image>abdennebi/stock-service</image>
+                        <image>cloudnativestack/stock-service</image>
                     </to>
                     <args>
                         <arg>--server.port=${PORT}</arg>
