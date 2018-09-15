@@ -5,14 +5,12 @@ import io.cloudnativestack.domain.ProductRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -30,10 +28,8 @@ public class ProductController {
 
     @GetMapping("/{id}")
     ResponseEntity<Product> findById(@PathVariable Long id) {
-        Product example = new Product();
-        example.setId(id);
-        Optional<Product> product = Optional.ofNullable(productRepository.findOne(Example.of(example)));
-        return ResponseEntity.ok().body(product.orElse(null));
+        Product product = productRepository.getOne(id);
+        return ResponseEntity.ok().body(product);
     }
 
     @GetMapping("/ref/{ref}")
